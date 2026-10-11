@@ -1,0 +1,72 @@
+name: advanced_todo_list
+description: >-
+  An advanced, customizable offline-first to-do list application for Android.
+  Features time-block categorization with sticky headers, gesture-driven task
+  management, nested circular time pickers, a pre-task audio alarm system and
+  a fully themeable interface (RGB color wheel plus custom backgrounds).
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # light state management with changenotifier
+  provider: ^6.1.2
+
+  # offline sqlite storage
+  sqflite: ^2.4.1
+  path: ^1.9.0
+  path_provider: ^2.1.5
+
+  # tiny store for theme settings
+  shared_preferences: ^2.3.3
+
+  # inline calendar for the task editor
+  table_calendar: ^3.1.2
+
+  # picking background images and alarm audio
+  file_picker: ^10.3.3
+
+  # permission checks for reading device audio
+  permission_handler: ^12.0.1
+
+  # biometric app lock
+  local_auth: ^2.3.0
+
+  # local exact alarms that ring with no dart running
+  arast_alarm:
+    path: packages/arast_alarm
+
+  # direct vibration for the in app buzz and previews
+  arast_haptics:
+    path: packages/arast_haptics
+
+  # date and time formatting
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  # fake sqlite so database tests run on the vm
+  sqflite_common_ffi: ^2.3.3
+  # builds launcher icons from the logo
+  flutter_launcher_icons: ^0.14.3
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon/app_icon.png
+    - assets/audio/alarm_tone.wav
+
+# adaptive icon with white background and logo foreground
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"

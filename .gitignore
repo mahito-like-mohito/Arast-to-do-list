@@ -1,7 +1,6 @@
 # Gradle files
 .gradle/
 build/
-.kotlin/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -24,6 +23,19 @@ misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
 
+# VS Code personal settings
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Local databases like test artifacts and device dumps
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-journal
+
 # Keystore files
 *.jks
 *.keystore
@@ -33,3 +45,45 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+android/local.properties
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+
+# Signing keys and passwords (never push these)
+key.properties
+android/key.properties
+*.p12
+*.pem
+*.key
+*.mobileprovision
+
+# Environment secrets
+.env
+*.env
+
+# iOS counterpart to google-services.json
+GoogleService-Info.plist
+
+# Test coverage output
+coverage/
+.coverage
+
+# Generated code (build_runner, mocks)
+*.g.dart
+*.freezed.dart
+*.mocks.dart
+
+# FVM version manager
+.fvm/
+
+# Merge and editor junk
+*.orig
+*.rej
+*~

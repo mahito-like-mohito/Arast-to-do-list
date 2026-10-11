@@ -1,0 +1,31 @@
+group 'com.morphinealonely.arast_haptics'
+version '1.0'
+
+// the host app provides the android plugin so declaring it here breaks the build
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.morphinealonely.arast_haptics'
+    compileSdk 36
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+
+    lint {
+        disable 'InvalidPackage'
+    }
+}

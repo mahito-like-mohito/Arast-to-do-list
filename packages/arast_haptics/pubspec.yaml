@@ -1,0 +1,23 @@
+name: arast_haptics
+description: >-
+  Direct access to the Android vibrator for Arast. Exists because the
+  pre-task buzz has to fire from the alarm background isolate, where the
+  engine's own haptic channel (HapticFeedback) has no host and notification
+  vibration depends on a granted notification permission.
+version: 1.0.0
+publish_to: "none"
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.morphinealonely.arast_haptics
+        pluginClass: ArastHapticsPlugin

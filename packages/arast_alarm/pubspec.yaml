@@ -1,0 +1,22 @@
+name: arast_alarm
+description: >-
+  Native exact alarm scheduling and playback for Arast. Schedules through
+  AlarmManager.setAlarmClock and rings from a foreground service, so no
+  Dart isolate has to start before the sound does.
+version: 1.0.0
+publish_to: "none"
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.morphinealonely.arast_alarm
+        pluginClass: ArastAlarmPlugin
