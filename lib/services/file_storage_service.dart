@@ -64,7 +64,7 @@ class FileStorageService {
       if (sourcePath == null) return null;
 
       await _clearFolder(_backgroundsFolder);
-      return _importFile(sourcePath, _backgroundsFolder);
+      return await _importFile(sourcePath, _backgroundsFolder);
     } on PlatformException catch (error) {
       debugPrint('Background image pick failed: $error');
       return null;
